@@ -6,20 +6,20 @@ export default function cars() {
 
   const app = getCurrentInstance()
 
-  function fetchCars() {
-    app.appContext.config.globalProperties.$http.get( `get_unit_all_tayang` ).then(function (response) {
+  async function fetchCars() {
+    return app.appContext.config.globalProperties.$http.get( `get_unit_all_tayang` ).then(function (response) {
         if (response.data.meta.code === 200) {
-            cars.value = response.data.data
+          cars.value = response.data.data
         }
     }).catch(function (error) {
         console.log(error)
     })
   }
 
-  function fetchCar(carId) {
-    app.appContext.config.globalProperties.$http.post( `getdetailunit/${carId}` ).then(function (response) {
+  async function fetchCar(carId) {
+    return app.appContext.config.globalProperties.$http.post( `getdetailunit/${carId}` ).then(function (response) {
         if (response.data.meta.code === 200) {
-            car.value = response.data.data
+          car.value = response.data.data
         }
     }).catch(function (error) {
         console.log(error)

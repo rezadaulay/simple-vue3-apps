@@ -10,10 +10,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const myApp = createApp(App)
 
-const axioInstance = axios.create({
+myApp.config.globalProperties.$http = axios.create({
     baseURL: 'https://api-nnd.sitama.co.id/api/v1/',
     timeout: 1000
 })
-myApp.config.globalProperties.$http = axioInstance
 
 myApp.use(router).mount('#app')
