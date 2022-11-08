@@ -1,5 +1,9 @@
 <template>
-    <div class="container py-5 product-detail">
+    <div class="container py-3 product-detail">
+        <div class="text-center">
+            <img src="https://i.im.ge/2022/08/22/Oh5X0J.NND-FINAL-logo-PNG.png" style="max-width: 80px; margin: auto;" alt=""/>
+        </div>
+        <hr>
         <h3 class="text-center pb-4">{{car.nama}}</h3>
         <nav aria-label="breadcrumb mb-3">
             <ol class="breadcrumb">
